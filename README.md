@@ -1,2 +1,2 @@
-# python
-All my old Python projects on the Web
+# Python
+Lihtne, aga huvitav Pythoni kursus
