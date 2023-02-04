@@ -30,7 +30,7 @@
 .navigation > h1{
     cursor: pointer;
     margin: 0 40px;
-    padding: 15px 0;
+    padding: 25px 0;
     font-size: 3rem;
     transition: color 200ms ease-in;
 }

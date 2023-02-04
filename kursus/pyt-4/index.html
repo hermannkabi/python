@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andmetüübid Pythonis</title>
+    <title>Teisendusmasin</title>
     <link rel="stylesheet"  href="../../kursus.css">
     <link rel="stylesheet"  href="../../master.css">
 
@@ -33,13 +33,13 @@
         <script type="text/python" id="pyscript"></script>
     </div>
     
-    <h1 class="title">Andmetüübid Pythonis</h1>
+    <h1 class="title">Teisendusmasin</h1>
     <br><br>
     <hr>
     <br><br>
     <div class="tutorial">
         <h2>Ülesanne</h2>
-        <p>Kirjuta programm, mis loob järgnevad muutujad:</p>
+        <p>Selles ülesandes kirjutad teisendusmasina. Programm küsib kasutajalt temperatuuri (Celsiuse skaalal) ja teisendab selle teistesse skaaladesse.</p>
         <table>
             <thead>
                 <th>Muutuja nimi</th>
@@ -48,28 +48,28 @@
 
             </thead>
             <tr>
-                <td>nimi</td>
-                <td><code>str</code></td>
-                <td>Küsi see muutuja kasutaja käest (kasuta <code>input()</code> funktsiooni)</td>
-            </tr>
-            <tr>
-                <td>vanus</td>
-                <td><code>int</code></td>
-                <td>Siia pane enda vanus</td>
-            </tr>
-            <tr>
-                <td>pikkus</td>
+                <td>temperatuur</td>
                 <td><code>float</code></td>
-                <td>Pane selleks enda pikkus meetrites (ujukomaarvuna)</td>
+                <td>Küsi kasutajalt <code>input()</code> abil</td>
             </tr>
             <tr>
-                <td>hobid</td>
-                <td><code>str</code></td>
-                <td>Mõtle paar hobi enda kohta (nt lugemine)</td>
+                <td>fahrenheit</td>
+                <td><code>float</code></td>
+                <td>Arvuta allpool toodud valemiga</td>
+            </tr>
+            <tr>
+                <td>kelvin</td>
+                <td><code>float</code></td>
+                <td>Arvuta allpool toodud valemiga</td>
             </tr>
         </table>
-        <p>Prindi välja järgmine lause: <em>NIMI on VANUS-aastane PIKKUS m pikk inimene, kellele meeldib HOBID</em></p>
-        <p>NB! Asenda läbiva suurtähega kirjutatud sõnad vastavate muutujatega</p>
+        <p>Selles ülesandes kasutame kolme skaalat: Celsius, Fahrenheit ja Kelvin. Nende teisendamine on allpool:</p>
+        <p>K = 273 + C</p>
+        <p>F = (C*1.8) + 32</p>
+        <p>Vormista vastus niimoodi:</p>
+        <p><em>TEMPERATUUR kraadi C on FAHRENHEIT kraadi F ja KELVIN kraadi K.</em></p>
+
+        <p>NB! Asenda läbiva suurtähega kirjutatud sõnad vastavate muutujatega. Jälgi vormistust!</p>
 
     </div>
 
@@ -83,7 +83,8 @@
         <p id="incorrect-text">✖ Kahjuks ei tundu see õige. Veendu, et vormistad vastuse täpselt nagu ülesandes kästud.</p>
  
         <button id="run-script">JOOKSUTA >></button>
-        <button chapter="pyt-1" id="mark-correct-btn">MÄRGI TEHTUKS √</button>
+        <button chapter="pyt-4" id="mark-correct-btn">MÄRGI TEHTUKS √</button>
+
     </div>
 
 

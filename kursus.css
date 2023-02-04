@@ -150,3 +150,8 @@ code{
     padding: 2px;
     color: black;
 }
+
+#turtle > #turtle-canvas{
+    margin: 30px;
+    background-color: white;
+}
