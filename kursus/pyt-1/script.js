@@ -17,13 +17,15 @@ $("#run-script").click(function (){
 
     const value = $("#py-output").val();
 
-    let regex = /(.+)on(.+)-aastane ja(.+)m pikk inimene, kellele meeldib(.+)/;
+    let regex = /(.+) on (.+)-aastane (.+) m pikk inimene, kellele meeldib (.+)/;
 
-    if(regex.test(value)){
+    console.log(value)
+
+    if(regex.test(value.trim())){
         $("#correct-text").css("display", "block");
 
         $("#py-output").css("color", "green");
-        // alert("Juhhuu! Sinu kood töötab! Võid kas proovida koodi veel täiustada või minna järgmise ülesande juurde");
+        $("#mark-correct-btn").css("display", 'inline');
     }else{
         $("#incorrect-text").css("display", "block");
 
@@ -32,7 +34,10 @@ $("#run-script").click(function (){
 
 });
 
-window.addEventListener('error', (event) => {
-    const { message, filename, lineno, colno, error } = event;
-    console.log('Captured uncaught error:', message, filename, lineno, colno, error.stack);
-});
+let completed = JSON.parse(window.localStorage.getItem("python-completed-chapters"));
+
+if(completed.includes('pyt-1')){
+    $("#mark-correct-btn").css("display", 'inline');
+    $("#mark-correct-btn").text("EEMALDA TEHTUTE HULGAST");
+
+}

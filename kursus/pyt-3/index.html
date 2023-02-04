@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aritmeetiline keskmine</title>
-    <link rel="stylesheet"  href="kursus.css">
+    <link rel="stylesheet"  href="../../kursus.css">
     <link rel="stylesheet"  href="../../master.css">
 
 </head>
@@ -39,7 +39,7 @@
     <br><br>
     <div class="tutorial">
         <h2>Ülesanne</h2>
-        <p>Selle ülesande lõpuks oled loonud programmi, mis suudab arvutada aritmeetilist keskmist. Programm küsib kasutajalt kolm arvu ja prindib välja nende aritmeetilise keskmise. Soovitatav on kasutada muutujaid:</p>
+        <p>Selle ülesande lõpuks oled loonud programmi, mis suudab arvutada aritmeetilist keskmist. Programm küsib kasutajalt kolm arvu ja prindib välja nende aritmeetilise keskmise. Soovitatav on kasutada järgmiseid muutujaid:</p>
         <table>
             <thead>
                 <th>Muutuja nimi</th>
@@ -65,7 +65,7 @@
             <tr>
                 <td>keskmine</td>
                 <td><code>float</code></td>
-                <td>Küsi kasutajalt (<code>input()</code>)</td>
+                <td>Arvuta kolme eelnevalt küsitud muutuja põhjal</td>
             </tr>
         </table>
         <p>Vormista arvuti vastus niimoodi: <em>Arvude ARV1, ARV2 ja ARV3 keskmine on KESKMINE</em></p>
@@ -84,12 +84,15 @@
         <p id="incorrect-text">✖ Kahjuks ei tundu see õige. Veendu, et vormistad vastuse täpselt nagu ülesandes kästud.</p>
  
         <button id="run-script">JOOKSUTA >></button>
+        <button chapter="pyt-3" id="mark-correct-btn">MÄRGI TEHTUKS √</button>
+
     </div>
 
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> 
     <script src="script.js"></script>
+    <script src="../../mark-correct.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython.min.js"></script> 
     <script src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython_stdlib.js"></script>
 </body>

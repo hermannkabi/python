@@ -19,3 +19,18 @@ $(".navigation > h1").click(function (){
   console.log("Her");
   window.location.href = "kursus/"+id+"/index.html";
 });
+
+window.onload = function (){
+
+  let completed = JSON.parse(window.localStorage.getItem("python-completed-chapters"));
+  console.log(completed);
+  
+  if(completed != null){
+    console.log(completed);
+    completed.forEach(element => {
+      $("#"+element).html("<span style='color:green; font-family: monospace'>[√]</span>"+$("#"+element).html());
+    });
+  }
+};
+
+window.onunload = function(){}; 

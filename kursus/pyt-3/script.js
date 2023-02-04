@@ -31,7 +31,9 @@ $("#run-script").click(function (){
         if((firstNumber + secondNumber + thirdNumber)/3 == averageNumber){
             $("#correct-text").css("display", "block");
 
-            $("#py-output").css("color", "green");    
+            $("#py-output").css("color", "green"); 
+            $("#mark-correct-btn").css("display", 'inline');
+
         }else{
             $("#incorrect-text").text("Vastus on vormistatud õigesti, aga nende arvude keskmine ei ole"+ averageNumber.toString());
             $("#incorrect-text").css("display", "block");
@@ -49,3 +51,11 @@ $("#run-script").click(function (){
 
 
 });
+
+
+let completed = JSON.parse(window.localStorage.getItem("python-completed-chapters"));
+if(completed.includes('pyt-3')){
+    $("#mark-correct-btn").css("display", 'inline');
+    $("#mark-correct-btn").text("EEMALDA TEHTUTE HULGAST");
+
+}

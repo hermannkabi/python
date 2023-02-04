@@ -25,7 +25,9 @@ $("#run-script").click(function (){
     if(value.trim() == "Tubli, arvasid ära!"){
             $("#correct-text").css("display", "block");
 
-            $("#py-output").css("color", "green");    
+            $("#py-output").css("color", "green");
+            $("#mark-correct-btn").css("display", 'inline');
+
     }else if(matches){
         let firstNumber = parseInt(matches[1])
         console.log(firstNumber)
@@ -34,7 +36,9 @@ $("#run-script").click(function (){
         if((firstNumber > secondNumber && sone == 'suurem') || (firstNumber < secondNumber && sone == "väiksem")){
             $("#correct-text").css("display", "block");
 
-            $("#py-output").css("color", "green");    
+            $("#py-output").css("color", "green");   
+            $("#mark-correct-btn").css("display", 'inline');
+
         }else{
             $("#incorrect-text").css("display", "block");
         }
@@ -44,3 +48,12 @@ $("#run-script").click(function (){
 
 
 });
+
+
+let completed = JSON.parse(window.localStorage.getItem("python-completed-chapters"));
+
+if(completed.includes('pyt-2')){
+    $("#mark-correct-btn").css("display", 'inline');
+    $("#mark-correct-btn").text("EEMALDA TEHTUTE HULGAST");
+
+}

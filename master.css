@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Baskervville&family=Libre+Baskerville:wght@400;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,300;1,900&display=swap');
 
 body{
     background-color: #181D31;
@@ -7,5 +6,5 @@ body{
     background-size: 40px 40px;
     background-position: -25px -25px;
     color: white;
-    font-family: "Baskervville";
+    font-family: "Chivo Mono";
 }
