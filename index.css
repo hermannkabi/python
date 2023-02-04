@@ -1,0 +1,35 @@
+@media only screen and (max-width: 600px) {
+    #python-logo{
+        display: none !important;
+    }
+    .navigation{
+        width: 100% !important;
+    }
+    .navigation > h1{
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        text-decoration-thickness: 1px;
+    }
+
+}
+
+.navigation{
+    margin-top: 45vh;
+    width: 50%;
+}
+
+
+.navigation > h1{
+    cursor: pointer;
+    margin: 0 40px;
+    padding: 15px 0;
+    font-size: 3rem;
+    transition: color 200ms ease-in;
+}
+
+#python-logo{
+    position: fixed;
+    top: 25%;
+    right: 100px;
+    max-width: 50%;
+}
