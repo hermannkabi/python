@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lihtne numbrimäng</title>
+    <link rel="stylesheet"  href="kursus.css">
+    <link rel="stylesheet"  href="../../master.css">
+
+</head>
+<body>
+
+    <script type="text/python">
+        import sys
+        from browser import document, alert
+        from browser.html import *
+
+        class Err:
+            def write(self, err):
+                document['py-output'].html += PRE(err).text
+
+
+
+        class CustomStdout:
+            def write(self, txt):
+                document['py-output'].html += f'{txt}'
+
+        sys.stderr = Err()
+        sys.stdout = CustomStdout()
+    </script>
+    <div id="script-container">
+        <script type="text/python" id="pyscript"></script>
+    </div>
+    
+    <h1 class="title">Lihtne numbrimäng</h1>
+    <br><br>
+    <hr>
+    <br><br>
+    <div class="tutorial">
+        <h2>Ülesanne</h2>
+        <p>Selles ülesandes loome lihtsa, kuid lõbusa numbrimängu. Mängu alguses küsib programm kasutajalt arvu, võrdleb seda siis õige vastusega ja ütleb, kas number on suurem või väiksem, kui õige number. Kasutame järgmiseid muutujaid:</p>
+        <table>
+            <thead>
+                <th>Muutuja nimi</th>
+                <th>Andmetüüp</th>
+                <th>Kirjeldus</th>
+
+            </thead>
+            <tr>
+                <td>oige_vastus</td>
+                <td><code>int</code></td>
+                <td>Vali siia suvaline arv 1-10, nt 7</td>
+            </tr>
+            <tr>
+                <td>kasutaja_pakkumine</td>
+                <td><code>int</code></td>
+                <td>Küsi kasutajalt numbrit 1-10 ja tee see <code>int</code>-iks</td>
+            </tr>
+        </table>
+        <p>Vormista arvuti vastus vastavalt tulemusele niimoodi:</p>
+        <p>1) <em>OIGE_VASTUS on suurem kui KASUTAJA_PAKKUMINE</em></p>
+        <p>2) <em>OIGE_VASTUS on väiksem kui KASUTAJA_PAKKUMINE</em></p>
+        <p>3) <em>Tubli, arvasid ära!</em></p>
+
+        <p>NB! Asenda läbiva suurtähega kirjutatud sõnad vastavate muutujatega</p>
+
+
+        <p>Vastuse testimiseks jooksuta programmi 3 korda. Esimene kord proovi numbrit, mis on väiksem õigest vastusest, teine kord suurem ja kolmas kord paku õigesti. Kui kõik kolm korda näitab veebileht rohelist tulemust, on programm õigesti kirjutatud.</p>
+
+    </div>
+
+    
+    <div class="answer">
+        <textarea placeholder="Kirjuta/kopeeri kood siia"></textarea>
+        <div class="output">
+            <textarea id="py-output" disabled placeholder="Väljund ilmub siia"></textarea>
+        </div>
+        <p id="correct-text">√ Juhhuu, sinu kood töötab. Võid minna järgmise ülesande juurde või proovida oma koodi täiustada</p>
+        <p id="incorrect-text">✖ Kahjuks ei tundu see õige. Veendu, et vormistad vastuse täpselt nagu ülesandes kästud.</p>
+ 
+        <button id="run-script">JOOKSUTA >></button>
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> 
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython_stdlib.js"></script>
+</body>
+</html>

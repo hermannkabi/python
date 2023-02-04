@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aritmeetiline keskmine</title>
+    <link rel="stylesheet"  href="kursus.css">
+    <link rel="stylesheet"  href="../../master.css">
+
+</head>
+<body>
+
+    <script type="text/python">
+        import sys
+        from browser import document, alert
+        from browser.html import *
+
+        class Err:
+            def write(self, err):
+                document['py-output'].html += PRE(err).text
+
+
+
+        class CustomStdout:
+            def write(self, txt):
+                document['py-output'].html += f'{txt}'
+
+        sys.stderr = Err()
+        sys.stdout = CustomStdout()
+    </script>
+    <div id="script-container">
+        <script type="text/python" id="pyscript"></script>
+    </div>
+    
+    <h1 class="title">Aritmeetiline keskmine</h1>
+    <br><br>
+    <hr>
+    <br><br>
+    <div class="tutorial">
+        <h2>Ülesanne</h2>
+        <p>Selle ülesande lõpuks oled loonud programmi, mis suudab arvutada aritmeetilist keskmist. Programm küsib kasutajalt kolm arvu ja prindib välja nende aritmeetilise keskmise. Soovitatav on kasutada muutujaid:</p>
+        <table>
+            <thead>
+                <th>Muutuja nimi</th>
+                <th>Andmetüüp</th>
+                <th>Kirjeldus</th>
+
+            </thead>
+            <tr>
+                <td>arv1</td>
+                <td><code>float</code></td>
+                <td>Küsi kasutajalt (<code>input()</code>)</td>
+            </tr>
+            <tr>
+                <td>arv2</td>
+                <td><code>float</code></td>
+                <td>Küsi kasutajalt (<code>input()</code>)</td>
+            </tr>
+            <tr>
+                <td>arv3</td>
+                <td><code>float</code></td>
+                <td>Küsi kasutajalt (<code>input()</code>)</td>
+            </tr>
+            <tr>
+                <td>keskmine</td>
+                <td><code>float</code></td>
+                <td>Küsi kasutajalt (<code>input()</code>)</td>
+            </tr>
+        </table>
+        <p>Vormista arvuti vastus niimoodi: <em>Arvude ARV1, ARV2 ja ARV3 keskmine on KESKMINE</em></p>
+
+        <p>NB! Asenda läbiva suurtähega kirjutatud sõnad vastavate muutujatega. Jälgi vormistust!</p>
+
+    </div>
+
+    
+    <div class="answer">
+        <textarea placeholder="Kirjuta/kopeeri kood siia"></textarea>
+        <div class="output">
+            <textarea id="py-output" disabled placeholder="Väljund ilmub siia"></textarea>
+        </div>
+        <p id="correct-text">√ Juhhuu, sinu kood töötab. Võid minna järgmise ülesande juurde või proovida oma koodi täiustada</p>
+        <p id="incorrect-text">✖ Kahjuks ei tundu see õige. Veendu, et vormistad vastuse täpselt nagu ülesandes kästud.</p>
+ 
+        <button id="run-script">JOOKSUTA >></button>
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> 
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython_stdlib.js"></script>
+</body>
+</html>
