@@ -13,37 +13,35 @@ $("#run-script").click(function (){
 
     // Check if the returned value is correct
 
-    //Excercise pyt4
+    //Excercise pyt6
 
     const value = $("#py-output").val();
 
-    let regex = /(-?\d+(?:.\d+)?) kraadi (.) on (-?\d+(?:.\d+)?) kraadi (.) ja (-?\d+(?:.\d+)?) kraadi (.)/;
+    let regex = /Teie kehamassiindeks on (-?\d+(?:\.\d+)?). Olete (.+)kaalus/;
 
     let matches = value.trim().match(regex);
 
 
-
     if(matches){
-        let firstNumber = parseFloat(matches[1]);
-        let firstUnit = matches[2];
+        let bmi = matches[1];
 
-        let secondNumber = parseFloat(matches[3]);
-        let secondUnit = matches[4];
-        
-        let thirdNumber = parseFloat(matches[5]);
-        let thirdUnit = matches[6];
+        let desc = matches[2];
 
 
-        if(firstUnit == "C" && secondUnit == "F" && thirdUnit == "K" && secondNumber == (1.8*firstNumber) + 32 && thirdNumber == firstNumber + 273){
-            $("#correct-text").css("display", "block");
+        if(bmi == parseFloat(bmi) && parseFloat(bmi) > 0){
+            if((desc == "üle" && bmi > 24.9) || (desc == "ala" && bmi < 18.5) || (desc == "normaal" && bmi >= 18.5 && bmi <= 24.9)){
+                $("#correct-text").css("display", "block");
 
-            $("#py-output").css("color", "green"); 
-            $("#mark-correct-btn").css("display", 'inline');
-
+                $("#py-output").css("color", "green"); 
+                $("#mark-correct-btn").css("display", 'inline');    
+            }else{
+                $("#incorrect-text").text("Vaata üle, et hinnang oleks vastavuses indeksiga, ja et vormistad vastuse täpselt!");
+                $("#incorrect-text").css("display", "block");
+    
+            }
         }else{
-            $("#incorrect-text").text("Vastus on vormistatud õigesti, aga midagi on valesti teisendamisega");
+            $("#incorrect-text").text("Vastus on vormistatud õigesti, aga midagi on valesti kehamassiindeksi väärtusega. ");
             $("#incorrect-text").css("display", "block");
-
         }
 
     }else{
@@ -60,7 +58,7 @@ $("#run-script").click(function (){
 
 
 let completed = JSON.parse(window.localStorage.getItem("python-completed-chapters"));
-if(completed.includes('pyt-4')){
+if(completed.includes('pyt-6')){
     $("#mark-correct-btn").css("display", 'inline');
     $("#mark-correct-btn").text("EEMALDA TEHTUTE HULGAST");
 

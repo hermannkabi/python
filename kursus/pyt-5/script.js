@@ -13,37 +13,30 @@ $("#run-script").click(function (){
 
     // Check if the returned value is correct
 
-    //Excercise pyt4
+    //Excercise pyt5
 
     const value = $("#py-output").val();
 
-    let regex = /(-?\d+(?:.\d+)?) kraadi (.) on (-?\d+(?:.\d+)?) kraadi (.) ja (-?\d+(?:.\d+)?) kraadi (.)/;
+    let regex = /Teie kehamassiindeks on (-?\d+(?:\.\d+)?)\.?/;
 
     let matches = value.trim().match(regex);
 
+    console.log(matches)
 
 
     if(matches){
-        let firstNumber = parseFloat(matches[1]);
-        let firstUnit = matches[2];
-
-        let secondNumber = parseFloat(matches[3]);
-        let secondUnit = matches[4];
-        
-        let thirdNumber = parseFloat(matches[5]);
-        let thirdUnit = matches[6];
+        let bmi = matches[1];
 
 
-        if(firstUnit == "C" && secondUnit == "F" && thirdUnit == "K" && secondNumber == (1.8*firstNumber) + 32 && thirdNumber == firstNumber + 273){
+        if(bmi == parseFloat(bmi) && parseFloat(bmi) > 0){
             $("#correct-text").css("display", "block");
 
             $("#py-output").css("color", "green"); 
             $("#mark-correct-btn").css("display", 'inline');
 
         }else{
-            $("#incorrect-text").text("Vastus on vormistatud õigesti, aga midagi on valesti teisendamisega");
+            $("#incorrect-text").text("Vastus on vormistatud õigesti, aga midagi on valesti kehamassiindeksi väärtusega. ");
             $("#incorrect-text").css("display", "block");
-
         }
 
     }else{
@@ -60,7 +53,7 @@ $("#run-script").click(function (){
 
 
 let completed = JSON.parse(window.localStorage.getItem("python-completed-chapters"));
-if(completed.includes('pyt-4')){
+if(completed.includes('pyt-5')){
     $("#mark-correct-btn").css("display", 'inline');
     $("#mark-correct-btn").text("EEMALDA TEHTUTE HULGAST");
 

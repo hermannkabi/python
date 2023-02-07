@@ -23,4 +23,6 @@ $("#mark-correct-btn").click(function (){
         window.localStorage.setItem("python-completed-chapters", JSON.stringify(completed))
 
     }
+
+    
 });
