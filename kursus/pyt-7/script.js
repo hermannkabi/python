@@ -85,7 +85,7 @@ $("#run-script").click(function (){
         }
 
     }else{
-        $("#incorrect-text").text("✖ Kahjuks ei tundu see õige. Veendu, et vormistad vastuse täpselt nagu ülesandes kästud.");
+        $("#incorrect-text").text("Kahjuks ei tundu see õige. Veendu, et vormistad vastuse täpselt nagu ülesandes kästud.");
 
         $("#incorrect-text").css("display", "block");
 
