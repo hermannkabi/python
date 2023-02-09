@@ -3,6 +3,7 @@
 @media only screen and (max-width: 600px) {
     #py-output, .answer > textarea{
         width: 95vw !important;
+        opacity: 1 !important;
     }
 
     .title{
@@ -29,6 +30,10 @@
     .answer > button{
         display: block !important;
         margin: 8px 0 !important;
+    }
+
+    #mark-correct-btn{
+        display: none !important;
     }
 }
   
