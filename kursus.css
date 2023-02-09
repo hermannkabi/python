@@ -30,6 +30,10 @@
         display: block !important;
         margin: 8px 0 !important;
     }
+
+    #mark-correct-btn{
+      display:none !important;
+    }
 }
   
 
