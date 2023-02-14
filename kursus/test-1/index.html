@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bossivõitlus | Vihmauss</title>
+    <link rel="stylesheet"  href="../../kursus.css">
+    <link rel="stylesheet"  href="../../master.css">
+
+</head>
+<body onload="brython()">
+
+    <script type="text/python">
+        import sys
+        from browser import document, alert
+        from browser.html import *
+
+        class Err:
+            def write(self, err):
+                document['py-output'].html += PRE(err).text
+
+
+
+        class CustomStdout:
+            def write(self, txt):
+                document['py-output'].html += f'{txt}'
+
+        sys.stderr = Err()
+        sys.stdout = CustomStdout()
+    </script>
+    <div id="script-container">
+        <script type="text/python" id="pyscript"></script>
+    </div>
+    
+    <h1 class="title">Bossivõitlus | Vihmauss</h1>
+    <br><br>
+    <hr>
+    <br><br>
+    <div class="tutorial">
+        <h2>Väljakutse</h2>
+        <p>Tere tulemast vihmaussi mullakoobastikku!!! Tee läbi kõik minu väljakutsed ja alistad mu. Aga vaid üks eksimus muudab su trofeeks minu lõpututel seintel.</p>
+        
+        <div class="timer">
+            <h1>AEGA JÄÄNUD</h1>
+            <h1 id="timer-counter"><span id="timer-minutes">15</span>:<span id="timer-seconds">00</span></h1>
+        </div>
+        <br><br>
+    </div>
+
+    <!-- Questions about the first two chapters go here -->
+    <div class="incorrect-result">
+        <h1 style="color: red;">-10s</h1>
+    </div>
+
+
+    <div class="questions">
+        <div question-nr="1" class="question" >
+            <h4>KÜSIMUS 1</h4>
+            <h2>Kuidas printida välja lause: "Python loodi 1991. aastal", kui keel = "Python" ja aasta = 1991?</h2>
+            <div class="choice incorrect">
+                <div class="choice-nr">A</div>
+                <h3>print(keel, "loodi ", aasta, ". aastal.")</h3>
+            </div>
+            <div class="choice incorrect">
+                <div class="choice-nr">B</div>
+                <h3>print(keel+" loodi "+aasta+". aastal.")</h3>
+            </div>
+            <div class="choice correct">
+                <div class="choice-nr">C</div>
+                <h3>print(keel, "loodi",str(aasta)+". aastal.")</h3>
+            </div>
+        </div>
+
+        <div question-nr="2" class="question">
+            <h4>KÜSIMUS 2</h4>
+            <h2>Mida teeb rida <code>input("Sisesta number: ")</code></h2>
+            <div class="choice incorrect">
+                <div class="choice-nr">A</div>
+                <h3>Kirjutab ekraanile "Sisesta number: " ja prindib siis ekraanile kasutaja vastuse</h3>
+            </div>
+            <div class="choice correct">
+                <div class="choice-nr">B</div>
+                <h3>Kirjutab ekraanile "Sisesta number: " ja küsib sisendit, aga ei tee sellega midagi</h3>
+            </div>
+            <div class="choice incorrect">
+                <div class="choice-nr">C</div>
+                <h3>Python salvestab <code>input()</code> väärtuse automaatselt muutujasse text, kui muutujat pole lisatud</h3>
+            </div>
+        </div>
+
+        <div question-nr="3" class="question">
+            <h4>KÜSIMUS 3</h4>
+            <h2>Mis peab olema kindlasti <code>if</code>-tsüklis?</h2>
+            <div class="choice incorrect">
+                <div class="choice-nr">A</div>
+                <h3>sõna <code>if</code> ja mingi tingimus</h3>
+            </div>
+            <div class="choice incorrect">
+                <div class="choice-nr">B</div>
+                <h3>sõna <code>if</code>, mingi tingimus ja koolon</h3>
+            </div>
+            <div class="choice correct">
+                <div class="choice-nr">C</div>
+                <h3>sõna <code>if</code>, mingi tingimus, koolon ja taandega kood</h3>
+            </div>
+        </div>
+
+        <div question-nr="4" class="question">
+            <h4>KÜSIMUS 4</h4>
+            <h2>Mis tüüpi on muutuja, millel pole väärtust?</h2>
+            <div class="choice correct">
+                <div class="choice-nr">A</div>
+                <h3>Sellist muutujat ei saa olemas olla, tekiks Error</h3>
+            </div>
+            <div class="choice incorrect">
+                <div class="choice-nr">B</div>
+                <h3>Vaikimisi on kõikide muutujate tüüp string</h3>
+            </div>
+            <div class="choice correct">
+                <div class="choice-nr">C</div>
+                <h3>NoneType</h3>
+            </div>
+        </div>
+
+        <div question-nr="5" class="question">
+            <h4>KÜSIMUS 5</h4>
+            <h2>Kas Pythonis saab muutuja väärtuse andmetüüpi muuta?</h2>
+            <div class="choice correct">
+                <div class="choice-nr">A</div>
+                <h3>Jah</h3>
+            </div>
+            <div class="choice incorrect">
+                <div class="choice-nr">B</div>
+                <h3>Ei</h3>
+            </div>
+        </div>
+
+        <div question-nr="6" class="question">
+            <h4>KÜSIMUS 6</h4>
+            <h2>Kes on Pythoni autor?</h2>
+            <div class="choice incorrect">
+                <div class="choice-nr">A</div>
+                <h3>Elon Musk</h3>
+            </div>
+            <div class="choice incorrect">
+                <div class="choice-nr">B</div>
+                <h3>Bill Gates</h3>
+            </div>
+            <div class="choice incorrect">
+                <div class="choice-nr">C</div>
+                <h3>Delfi oraakel ehk Püütia</h3>
+            </div>
+            <div class="choice correct">
+                <div class="choice-nr">D</div>
+                <h3>Guido van Rossum</h3>
+            </div>
+            <div class="choice incorrect">
+                <div class="choice-nr">E</div>
+                <h3>Linus Torvalds</h3>
+            </div>
+        </div>
+        <div question-nr="7" class="question">
+            <h4>KÜSIMUS 7</h4>
+            <h2>Tähelepanu kontroll! Mis aastal loodi Python? Vastus oli esimeses küsimuses</h2>
+            <div class="choice incorrect">
+                <div class="choice-nr">A</div>
+                <h3>1980</h3>
+            </div>
+            <div class="choice correct">
+                <div class="choice-nr">B</div>
+                <h3>1991</h3>
+            </div>
+            <div class="choice incorrect">
+                <div class="choice-nr">C</div>
+                <h3>1999</h3>
+            </div>
+            <div class="choice incorrect">
+                <div class="choice-nr">D</div>
+                <h3>2001</h3>
+            </div>
+            <div class="choice incorrect">
+                <div class="choice-nr">E</div>
+                <h3>2011</h3>
+            </div>
+        </div>
+        <div question-nr="8" class="question">
+            <h4>KÜSIMUS 8</h4>
+            <h2>Milline neist ridadest EI OLE luuletuses The Zen of Python</h2>
+            <div class="choice incorrect">
+                <div class="choice-nr">A</div>
+                <h3>Readability counts.</h3>
+            </div>
+            <div class="choice correct">
+                <div class="choice-nr">B</div>
+                <h3>Python is a great language.</h3>
+            </div>
+            <div class="choice incorrect">
+                <div class="choice-nr">C</div>
+                <h3>Now is better than never.</h3>
+            </div>
+        </div>
+        <div question-nr="9" class="question">
+            <h4>KÜSIMUS 9</h4>
+            <h2>Kes neist firmadest omab Pythonit?</h2>
+            <div class="choice incorrect">
+                <div class="choice-nr">A</div>
+                <h3>Google</h3>
+            </div>
+            <div class="choice incorrect">
+                <div class="choice-nr">B</div>
+                <h3>Microsoft</h3>
+            </div>
+            <div class="choice incorrect">
+                <div class="choice-nr">C</div>
+                <h3>Apple</h3>
+            </div>
+            <div class="choice correct">
+                <div class="choice-nr">D</div>
+                <h3>Mitte keegi, see on vabavara</h3>
+            </div>
+        </div>
+
+        <div question-nr="10" class="question">
+            <h4>KÜSIMUS 10</h4>
+            <h2>Kes neist firmadest kasutab Pythonit?</h2>
+            <div class="choice correct">
+                <div class="choice-nr">A</div>
+                <h3>Google</h3>
+            </div>
+            <div class="choice correct">
+                <div class="choice-nr">B</div>
+                <h3>Dropbox</h3>
+            </div>
+            <div class="choice correct">
+                <div class="choice-nr">C</div>
+                <h3>Facebook</h3>
+            </div>
+            <div class="choice correct">
+                <div class="choice-nr">D</div>
+                <h3>Netflix</h3>
+            </div>
+        </div>
+
+
+        <div class="question question-end">
+            <p class="correct-text" style="display: block;">Küsimused on õigesti vastatud</p>
+        </div>
+    </div>
+
+    <div style="margin-left: 30px; margin-bottom: 18px;" class="code-debugging-correct" hidden>
+        <p class="correct-text" style="display: inline;">Koodiparandamine edukalt sooritatud!</p>
+        <br>
+    </div>
+
+    <div style="margin-left: 30px;" class="code-writing-correct" hidden>
+        <p class="correct-text" style="display: inline;">Koodi kirjutamine edukalt sooritatud!</p>
+    </div>
+
+
+    <!-- Code debugging -->
+
+    <div class="code-debugging" hidden>
+        <div class="answer">
+            <h2>Paranda kood!</h2>
+            <h5 style="color: grey;">Ka prinditud laused peavad olema korrektselt (st ühe tühikuga) vormistatud!</h5>
+    
+            <textarea >
+a == 1
+b == 2
+if a > b:
+    print("A on suurem kui B");
+else:
+    c  input("Sisesta arv: ")
+    print("Sisestasid arvu " c)
+    print "Sellest arvust ühe võrra suurem on" + c + 1
+            </textarea>
+            <div class="output">
+                <textarea id="py-output" placeholder="Väljund ilmub siia" disabled></textarea>
+            </div>
+            <p id="incorrect-text">Kahjuks ei tundu see õige!</p>
+
+            <button id="run-script">JOOKSUTA >></button>
+
+        </div>
+        
+    </div>
+
+    
+    <div id="pyscript"></div>
+
+
+    <!-- Ending -->
+
+    <div class="ending" hidden>
+        <h1 style="text-align: center;">Eiii...</h1>
+        <div class="answer" hidden><button chapter="test-1" style="display:inline" id="mark-correct-btn">MÄRGI TEHTUKS √</button></div>
+    </div>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script> 
+    <script src="script.js"></script>
+    <script src="../../mark-correct.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/brython@3.10.5/brython_stdlib.js"></script>
+</body>
+</html>

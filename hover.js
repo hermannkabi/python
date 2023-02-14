@@ -37,6 +37,7 @@ window.onload = function (){
 
   const chaptersRaw = {
     "chapter-1":["pyt-1", "pyt-3", "pyt-4", "pyt-5"],
+    "chapter-2":["pyt-2", "pyt-6", "pyt-7", "test-1"]
   };
 
   var chapters = new Map(Object.entries(chaptersRaw));

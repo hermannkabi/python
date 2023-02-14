@@ -137,7 +137,7 @@ hr{
 
 }
 
-#correct-text{
+#correct-text, .correct-text{
     color: green;
     display: none;
     font-family: monospace;
@@ -152,7 +152,7 @@ hr{
 
 }
 
-#correct-text::before{
+#correct-text::before, .correct-text::before{
     content: "√ ";
 }
 
@@ -216,4 +216,76 @@ warning{
 warning::before{
     content: "⚠ ";
     color: orange;
+}
+
+
+.timer{
+    text-align: end;
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    z-index: 10;
+    transition: top 1000ms ease-in-out, right 1000ms ease-in-out;
+}
+
+#timer-counter{
+    transition: color 300ms ease-in-out;
+}
+
+.choice{
+    display: flex;
+    align-items: center;
+}
+
+.choice-nr{
+    margin-right: 16px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%; 
+    background-color: transparent;
+    border: 2px solid green; 
+    text-align: center; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out;
+    cursor: pointer;
+    
+}
+
+.questions{
+    margin-left: 30px;
+}
+
+.choice-nr:hover{
+    background-color: green;
+}
+
+.question > h4{
+    color: grey;
+    margin-bottom: 4px;
+}
+
+.question > h2{
+    margin-top: 0;
+}
+
+.incorrect-clicked:hover{
+    background-color: transparent;
+    pointer-events: none;
+}
+
+.incorrect-result{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.ending{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
